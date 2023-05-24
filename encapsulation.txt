@@ -1,0 +1,27 @@
+class EncapsulationExample:
+    def __init__(self):
+        self._public_data = "This is a public attribute."
+        self.__private_data = "This is a private attribute."
+
+    def public_method(self):
+        print("This is a public method.")
+
+    def __private_method(self):
+        print("This is a private method.")
+
+    def access_private_data(self):
+        print(self.__private_data)
+
+# Create an instance of the class
+obj = EncapsulationExample()
+
+# Access public attributes and methods
+print(obj._public_data)
+obj.public_method()
+
+# Trying to access private attributes and methods will result in an AttributeError
+# print(obj.__private_data)  # This will raise an error
+# obj.__private_method()  # This will raise an error
+
+# However, private attributes and methods can still be accessed indirectly
+obj.access_private_data()
